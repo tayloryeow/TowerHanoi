@@ -14,9 +14,15 @@ class Disc:
 class Pillar:
     #Creates a pillar in a certain peg location.
     def __init__(self, peg_position, list_of_disc_sizes):
+        #Store where the pillar is located
         self.peg_position = peg_position
 
-        #Fill the pillar with discs of the appropriate size in the appropriate order.
+        #Create a storage list for Discs
+        self.discs = []
+
+        #Fill the disc storage list with new Discs
+        for disc_size in list_of_disc_sizes:
+            self.discs.append(Disc(disc_size))
 
 
 '''
@@ -41,3 +47,14 @@ class TowersOfHanoi:
             #generate a list of discs
             #Randomize said discs
             #Feed into pillar
+
+
+def main():
+    #Create a random towers of Hanoi
+    towers = TowersOfHanoi()
+
+    #Visualize it
+    towers.visualize()
+
+if __name__=="__main__":
+    main()
