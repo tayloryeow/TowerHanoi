@@ -10,7 +10,7 @@ The basic idea is that you have a number of pillars and a number of discs.
 Each disc is a unique size. Additionally each disc rests on a pillar. 
 
 Each disc must rest on a disc that is larger in size than it. 
->(Technically put: Going down the pillar every disc must be MONITONICALLY increasing in size)
+>Taylor Note: Going down the pillar every disc must be MONITONICALLY increasing in size.
 
 Moving only one disc at time write a "alogirthm" or series of steps that will put all the discs in the correct order on a single pillar!
 
@@ -60,13 +60,14 @@ Each level gets progressivly more complex in conception.
 
 Finish whatever you can. 
 
->Taylor Note: 
-> I'll help you with anything you can but want to finish!
+>Taylor Note: I'll help you with anything you can but want to finish!
 
 You will have a very easy time on level 0. 
 The actual problems in level 1 that's where the meat of the problem is. 
-Level 2 is very difficult and if anyone gets it I will be immpressed.
+Level 2 is very difficult and if anyone gets it I will be impressed.
 
 0. Play the simplest version of the game. TODO
 1. Write an alogirthm for the simplest complex case of the 3 pillar problem.
-2. Extend your algorithmn or just test the same code alogrithmn from level 1 onto level 2.
+2. Level 2 is essentially arbitrary number of pillars and a hidden but solvable number of discs.
+
+ >Taylor Note: Extend your algorithmn or just test the same code alogrithmn from level 1 onto level 2.
