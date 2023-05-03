@@ -1,16 +1,20 @@
-'''
+"""
 Class file for keeping state, visuals, and control of the problem.
 
 Assumptions for the moment
 > Only works for 3 pillars
 > Up to 6 discs
-'''
+"""
+
 
 # Disc State tracker class
 class Disc:
     # Creates a disc of a specified size
     def __init__(self, size):
         self.size = size
+
+    def get_size(self):
+        return self.size
 
 
 # Collection of Discs called a Pillar Class
@@ -29,6 +33,13 @@ class Pillar:
 
     def get_dics(self):
         return self.discs
+
+    def is_valid(self):
+        last_disc = 0
+        for disc in self.discs:
+            if last_disc > disc.get_size():
+                return False
+        return True
 
 
 '''
@@ -67,7 +78,17 @@ class TowersOfHanoi:
         # I.e. pillar 0 is displayed above pillar 1 etc
         pass
 
+    def get_all_discs(self):
+        # Holder for all the discs
+        # 2d list representation
+        disc_reprs = []
+
+        # Get and add each pillar disc reprs to disc holder
+        for pillar in self.num_pillars:
+            disc_reprs.append(pillar.get_dics())
+
+        return disc_reprs
+
     # Get a specific pillar
     def get_pillar(self, pillar_index):
         return self.game_state['pillars'][pillar_index]
-
