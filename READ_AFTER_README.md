@@ -13,5 +13,5 @@ This readme will get you acquainted getting the code on your machine and getting
 1. First lets get the code on your server.
 > GIT CLONE
 2. Read the README.md file at the top of the file scope.
-3. Create the dependencies (Load all the extra code that makes the code I wrote actually work. Its a little complicated because this is meant to be platform agnostic i.e. work on windows, linux, etc)
+3. Create the dependencies (Load all the extra code that makes the code I wrote actually work. </br> Its a little complicated because this is meant to be platform agnostic i.e. work on windows, linux, etc)
 4. Run the level 0 visualizer!
