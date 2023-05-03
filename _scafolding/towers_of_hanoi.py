@@ -5,7 +5,7 @@ Assumptions for the moment
 > Only works for 3 pillars
 > Up to 6 discs
 """
-
+import random
 
 # Disc State tracker class
 class Disc:
@@ -31,8 +31,12 @@ class Pillar:
         for disc_size in list_of_disc_sizes:
             self.discs.append(Disc(disc_size))
 
-    def get_dics(self):
-        return self.discs
+    # Get a list of disc sizes as ints
+    def get_discs(self):
+        integer_disc_list = []
+        for disc in self.discs:
+            integer_disc_list.append(disc.get_size())
+        return integer_disc_list
 
     def is_valid(self):
         last_disc = 0
@@ -61,16 +65,20 @@ class TowersOfHanoi:
         pillars_list = []
         self.game_state = {'pillars': pillars_list}
 
+        #Create a pool of discs to randomly assign to the pillars
+        discs_to_assign = range(0, num_discs)
+        discs_to_assign = random.shuffle(discs_to_assign)
+
+
         # Create the given number of pillars
         for curr_pillar_number in range(0, num_pillars):
+
             # Manipulate the parameters for the Pillar construction
             disc_list = [1, 2, 3]
             newly_created_pillar = Pillar(curr_pillar_number, disc_list)
-            self.game_state['pillars'].append(newly_created_pillar)
 
-            # generate a list of discs
-            # Randomize said discs
-            # Feed into pillar
+            #Add the newly constructed pillar with its discs
+            self.game_state['pillars'].append(newly_created_pillar)
 
     # Textual repr of the game state
     def __str__(self):
@@ -84,9 +92,10 @@ class TowersOfHanoi:
         disc_reprs = []
 
         # Get and add each pillar disc reprs to disc holder
-        for pillar in self.num_pillars:
-            disc_reprs.append(pillar.get_dics())
-
+        for pillar_index in range(0, self.num_pillars):
+            # get a list of discs
+            pillars_discs = self.get_pillar(pillar_index).get_discs()
+            disc_reprs.append(pillars_discs)
         return disc_reprs
 
     # Get a specific pillar
