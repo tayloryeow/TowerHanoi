@@ -28,8 +28,6 @@ class Disk:
         self.width = width
         self.color = color
 
-
-
 # Define the towers
 class Tower:
     def __init__(self, x, y, color):
