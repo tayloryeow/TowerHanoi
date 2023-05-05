@@ -112,8 +112,6 @@ class TowerOfHanoi:
                 pygame.draw.rect(screen, disk.color, [disk_x, disk_y, disk.width, disk.height])
                 num_of_discs_added += 1
 
-            disk_y = size[1] - tower_height + 10
-
     def draw_towers(self, tower_width, tower_height):
         for tower in self.towers:
             pygame.draw.rect(screen, tower.color, [tower.x, tower.y, tower_width, tower_height])
